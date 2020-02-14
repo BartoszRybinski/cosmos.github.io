@@ -1,0 +1,286 @@
+html
+  scroll-snap-type: y mandatory
+  body
+    overflow-x: hidden
+    section
+      scroll-snap-align: start
+    .sidebar
+      position: absolute
+      top: -5vh
+      left: -101vh
+      height: 110vh
+      width: 101vh
+      max-width: 200vw
+      background-color: $white
+      z-index: 1001
+      border-radius: 50%
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      padding-left: 50vh
+      transition: 1s ease
+      li
+        list-style-type: none
+        padding: 20px
+        a
+          color: #aaa
+          text-decoration: none
+          position: relative
+          font-size: 1.2em
+          &:hover
+            &:before
+              width: 100%
+          &:before
+            top: -2px
+            left: 0
+            width: 0
+            height: 100%
+            color: $black
+            position: absolute
+            overflow: hidden
+            content: attr(data-text)
+            transition: ease 0.3s
+    .change-sidebar
+      left: -47vh
+
+
+    header
+      top: 0
+      left: 0
+      width: 100vw
+      height: 20vh
+      position: absolute
+      z-index: 1000
+      nav
+        width: 90%
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin: 0 auto
+        .header-logo
+          width: 150px
+        .hamburger-menu
+          width: 35px
+          height: 25px
+          cursor: pointer
+
+          &:hover
+            .bar1
+              width: 100%
+              transform: translateY(-5px) translateX(0px)
+            .bar3
+              width: 100%
+          .bar
+            height: 4px
+            width: 100%
+            background-color: $white
+            display: block
+            border-radius: 5px
+            opacity: 1
+            transition: 0.3s ease-in-out
+          .bar1
+            transform: translateY(-5px) translateX(17px)
+            width: 50%
+          .bar3
+            transform: translateY(5px)
+            width: 50%
+        .change
+          .bar1
+            transform: rotate(-45deg)
+            opacity: 0
+          .bar2
+            width: 100%
+            transform: translateY(-2px) rotate(45deg)
+          .bar3
+            width: 100%
+            transform: translateY(-5px) rotate(-45deg)
+
+    .hero-section
+      width: 100vw
+      height: 100vh
+      overflow: hidden
+
+    .about-section
+      width: 100vw
+      height: 100vh
+      display: flex
+      @media(max-width: $medium-devices)
+        height: 70vh
+      .about-container
+        width: 50%
+        height: 80%
+        margin: auto
+        display: flex
+        @media(max-width: $medium-devices)
+          width: 100%
+        .about-content
+          height: 80%
+          width: 80%
+          display: flex
+          flex-direction: column
+          margin: auto
+          align-items: center
+          font-weight: $font-thin
+          h1
+            font-size: 3em
+            font-weight: $font-thin
+            position: relative
+            &:after
+              content: ''
+              width: 100%
+              height: 2px
+              background-color: $secondary
+              top: 100%
+              left: 0
+              position: absolute
+          p
+            font-size: 1.2em
+            text-align: center
+      img
+        height: 80%
+        width: 50%
+        margin: auto
+        @media(max-width: $medium-devices)
+          visibility: hidden
+          width: 0%
+
+    .gallery-section
+      width: 100vw
+      height: 100vh
+      display: flex
+      @media(max-width: $medium-devices)
+        flex-direction: column
+        height: max-content
+      .gallery-img-container
+        width: 33%
+        height: 100%
+        cursor: pointer
+        position: relative
+        scroll-snap-align: start
+        &:hover
+          .gallery-film-icon
+            opacity: 1
+            width: 20%
+        @media(max-width: $medium-devices)
+          width: 100%
+          height: 70vh
+        img
+          width: 100%
+          height: 100%
+        .gallery-film-icon
+          width: 15%
+          height: max-content
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          opacity: .7
+          transition: 0.3s ease-in-out
+
+
+
+    .contact-section
+      width: 100vw
+      height: 100vh
+      display: flex
+      @media(max-width: $large-devices)
+        flex-direction: column
+        height: 70vh
+        align-items: center
+      @media(max-width: $small-devices)
+        height: 50vh
+      .contact-quote-wrapper
+        width: 50%
+        height: 100%
+        background: url("../img/stars.jpeg")
+        background-position: center
+        background-size: cover
+        background-repeat: no-repeat
+        filter: grayscale(100%)
+        @media(max-width: $large-devices)
+          visibility: hidden
+          height: 0
+      .contact-quote
+        color: $white
+        width: 70%
+        text-align: center
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        font-size: 1.4em
+        span
+          font-size: 0.8em
+
+
+      .contact-form-wrapper
+        width: 50%
+        display: flex
+        @media(max-width: $large-devices)
+          width: 70%
+        @media(max-width: $small-devices)
+          width: 80%
+        .contact-form-container
+          width: 70%
+          height: 80%
+          display: flex
+          flex-direction: column
+          margin: auto
+          h2
+            font-size: 2em
+            font-family: $font-stack
+            align-self: center
+          input
+            border: none
+            border-bottom: 2px solid black
+            margin-bottom: 10%
+            background: transparent
+            &:focus
+              border-color: $secondary
+              &::placeholder
+                color: $secondary
+          .form-message
+            border: 2px solid black
+            margin-bottom: 10%
+            &:focus
+              border-color: $secondary
+              &::placeholder
+                color: $secondary
+          .btn-submit
+            background-color: black
+            color: white
+            padding: 2%
+            width: 40%
+            height: 15%
+            align-self: center
+            cursor: pointer
+            position: relative
+            z-index: 2
+            overflow: hidden
+            span
+              position: absolute
+              top: 50%
+              left: 50%
+              transform: translate(-50%, -50%)
+            &:before
+              content: ''
+              top: 100%
+              left: -150%
+              height: 500%
+              width: 200%
+              background-color: $secondary
+              position: absolute
+              transform: rotate(45deg)
+              z-index: -2
+            &:hover
+              &:before
+                animation: btn-anim 0.7s forwards
+                @keyframes btn-anim
+                  50%
+                    top: -300%
+                    left: 12%
+                  100%
+                    top: -200%
+                    left: -30%
