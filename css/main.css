@@ -425,6 +425,87 @@ html {
     overflow-x: hidden; }
     html body section {
       scroll-snap-align: start; }
+    html body .preloader {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #000000;
+      top: 0;
+      left: 0;
+      z-index: 1002;
+      -webkit-animation: preloader 1s ease-in-out forwards;
+      animation: preloader 1s ease-in-out forwards;
+      -webkit-animation-delay: 4s;
+      animation-delay: 4s; }
+
+@-webkit-keyframes preloader {
+  to {
+    opacity: 0;
+    height: 0%; } }
+
+@keyframes preloader {
+  to {
+    opacity: 0;
+    height: 0%; } }
+      html body .preloader .preloader-solar {
+        top: 40%;
+        left: 50%;
+        position: absolute;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); }
+      html body .preloader .preloader-eclipse {
+        position: absolute;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-animation: solar-eclipse 3s ease-in-out forwards;
+        animation: solar-eclipse 3s ease-in-out forwards; }
+
+@-webkit-keyframes solar-eclipse {
+  0% {
+    top: 30%;
+    left: 40%; }
+  100% {
+    top: 40%;
+    left: 50%; } }
+
+@keyframes solar-eclipse {
+  0% {
+    top: 30%;
+    left: 40%; }
+  100% {
+    top: 40%;
+    left: 50%; } }
+      html body .preloader span {
+        color: #fff;
+        font-size: 1.2em;
+        letter-spacing: 5px;
+        font-weight: 300;
+        top: 70%;
+        left: 50%;
+        position: absolute;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-animation: solar-eclipse-span 2s ease-in-out infinite;
+        animation: solar-eclipse-span 2s ease-in-out infinite; }
+
+@-webkit-keyframes solar-eclipse-span {
+  0% {
+    opacity: 0.3; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0.3; } }
+
+@keyframes solar-eclipse-span {
+  0% {
+    opacity: 0.3; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0.3; } }
     html body .sidebar {
       position: absolute;
       top: -5vh;
@@ -624,14 +705,14 @@ html {
           height: -moz-max-content;
           height: max-content; } }
       html body .gallery-section .gallery-img-container {
-        width: 33%;
+        width: 33.3%;
         height: 100%;
         cursor: pointer;
         position: relative;
         scroll-snap-align: start; }
         html body .gallery-section .gallery-img-container:hover .gallery-film-icon {
           opacity: 1;
-          width: 20%; }
+          width: 16%; }
         @media (max-width: 768px) {
           html body .gallery-section .gallery-img-container {
             width: 100%;
@@ -640,7 +721,7 @@ html {
           width: 100%;
           height: 100%; }
         html body .gallery-section .gallery-img-container .gallery-film-icon {
-          width: 15%;
+          width: 13%;
           height: -webkit-max-content;
           height: -moz-max-content;
           height: max-content;
@@ -675,7 +756,8 @@ html {
           height: 60vh; } }
       html body .contact-section .contact-quote-wrapper {
         width: 50%;
-        height: 100%;
+        height: 80%;
+        margin: auto;
         background: url("../img/stars.jpeg");
         background-position: center;
         background-size: cover;

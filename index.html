@@ -9,7 +9,11 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-
+<div class="preloader">
+  <img src="img/solar-layer.svg" alt="" class="preloader-solar">
+  <img src="img/eclipse-layer.svg" alt="" class="preloader-eclipse">
+  <span>LOADING</span>
+</div>
 <ul class="sidebar">
   <li><a href="" data-text="HOME">HOME</a></li>
   <li><a href="" data-text="ABOUT">ABOUT</a></li>
@@ -18,7 +22,7 @@
 </ul>
 <header>
   <nav>
-    <img src="img/logo.PNG" alt="" class="header-logo">
+    <img src="img/logo.svg" alt="" class="header-logo">
     <div class="hamburger-menu">
       <div class="bar bar1"></div>
       <div class="bar bar2"></div>
@@ -46,12 +50,12 @@
 </div>
 <!-- <div class="gallery-img-container" data-aos="fade-up" data-aos-delay="200"> -->
   <div class="gallery-img-container" data-aos="fade-up">
-  <img src="img/img_2.png" alt="" class="gallery-img-1">
+  <img src="img/img_2.png" alt="" class="gallery-img-2">
   <img src="img/start-icon.svg" alt="" class="gallery-film-icon">
 </div>
 <!-- <div class="gallery-img-container" data-aos="fade-up" data-aos-delay="400"> -->
   <div class="gallery-img-container" data-aos="fade-up">
-  <img src="img/img_3.png" alt="" class="gallery-img-1">
+  <img src="img/img_3.png" alt="" class="gallery-img-3">
   <img src="img/start-icon.svg" alt="" class="gallery-film-icon">
 </div>
 
@@ -83,6 +87,7 @@
 <script>
   AOS.init();
 </script>
+<script src="js/block-scroll.js"></script>
 <script src="js/main.js"></script>
 <script src="js/particle.js"></script>
 </body>
