@@ -416,6 +416,11 @@ html {
   -webkit-scroll-snap-type: y mandatory;
   -ms-scroll-snap-type: y mandatory;
   scroll-snap-type: y mandatory; }
+  @media (max-width: 768px) {
+    html {
+      -webkit-scroll-snap-type: none;
+      -ms-scroll-snap-type: none;
+      scroll-snap-type: none; } }
   html body {
     overflow-x: hidden; }
     html body section {
@@ -551,7 +556,7 @@ html {
       display: flex; }
       @media (max-width: 768px) {
         html body .about-section {
-          height: 70vh; } }
+          height: 60vh; } }
       html body .about-section .about-container {
         width: 50%;
         height: 80%;
@@ -563,7 +568,7 @@ html {
           html body .about-section .about-container {
             width: 100%; } }
         html body .about-section .about-container .about-content {
-          height: 80%;
+          height: 100%;
           width: 80%;
           display: -webkit-box;
           display: -ms-flexbox;
@@ -576,7 +581,10 @@ html {
           -webkit-box-align: center;
           -ms-flex-align: center;
           align-items: center;
-          font-weight: 100; }
+          font-weight: 100;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center; }
           html body .about-section .about-container .about-content h1 {
             font-size: 3em;
             font-weight: 100;
@@ -664,7 +672,7 @@ html {
           align-items: center; } }
       @media (max-width: 500px) {
         html body .contact-section {
-          height: 50vh; } }
+          height: 60vh; } }
       html body .contact-section .contact-quote-wrapper {
         width: 50%;
         height: 100%;
@@ -701,7 +709,7 @@ html {
             width: 70%; } }
         @media (max-width: 500px) {
           html body .contact-section .contact-form-wrapper {
-            width: 80%; } }
+            width: 90%; } }
         html body .contact-section .contact-form-wrapper .contact-form-container {
           width: 70%;
           height: 80%;
@@ -719,11 +727,17 @@ html {
             -ms-flex-item-align: center;
             -ms-grid-row-align: center;
             align-self: center; }
+            @media (max-width: 500px) {
+              html body .contact-section .contact-form-wrapper .contact-form-container h2 {
+                font-size: 2.2em; } }
           html body .contact-section .contact-form-wrapper .contact-form-container input {
             border: none;
             border-bottom: 2px solid black;
             margin-bottom: 10%;
             background: transparent; }
+            @media (max-width: 500px) {
+              html body .contact-section .contact-form-wrapper .contact-form-container input {
+                margin-bottom: 15%; } }
             html body .contact-section .contact-form-wrapper .contact-form-container input:focus {
               border-color: #E7B16B; }
               html body .contact-section .contact-form-wrapper .contact-form-container input:focus::-webkit-input-placeholder {
@@ -737,6 +751,10 @@ html {
           html body .contact-section .contact-form-wrapper .contact-form-container .form-message {
             border: 2px solid black;
             margin-bottom: 10%; }
+            @media (max-width: 500px) {
+              html body .contact-section .contact-form-wrapper .contact-form-container .form-message {
+                margin-bottom: 15%;
+                padding-bottom: 10%; } }
             html body .contact-section .contact-form-wrapper .contact-form-container .form-message:focus {
               border-color: #E7B16B; }
               html body .contact-section .contact-form-wrapper .contact-form-container .form-message:focus::-webkit-input-placeholder {
@@ -760,6 +778,10 @@ html {
             position: relative;
             z-index: 2;
             overflow: hidden; }
+            @media (max-width: 500px) {
+              html body .contact-section .contact-form-wrapper .contact-form-container .btn-submit {
+                width: 50%;
+                height: 20%; } }
             html body .contact-section .contact-form-wrapper .contact-form-container .btn-submit span {
               position: absolute;
               top: 50%;

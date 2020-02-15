@@ -1,5 +1,7 @@
 html
   scroll-snap-type: y mandatory
+  @media(max-width: $medium-devices)
+    scroll-snap-type: none
   body
     overflow-x: hidden
     section
@@ -107,22 +109,25 @@ html
       height: 100vh
       display: flex
       @media(max-width: $medium-devices)
-        height: 70vh
+        height: 60vh
       .about-container
         width: 50%
         height: 80%
         margin: auto
         display: flex
+
         @media(max-width: $medium-devices)
           width: 100%
         .about-content
-          height: 80%
+          height: 100%
           width: 80%
           display: flex
           flex-direction: column
           margin: auto
           align-items: center
           font-weight: $font-thin
+          justify-content: center
+
           h1
             font-size: 3em
             font-weight: $font-thin
@@ -190,7 +195,7 @@ html
         height: 70vh
         align-items: center
       @media(max-width: $small-devices)
-        height: 50vh
+        height: 60vh  
       .contact-quote-wrapper
         width: 50%
         height: 100%
@@ -221,7 +226,7 @@ html
         @media(max-width: $large-devices)
           width: 70%
         @media(max-width: $small-devices)
-          width: 80%
+          width: 90%
         .contact-form-container
           width: 70%
           height: 80%
@@ -232,11 +237,15 @@ html
             font-size: 2em
             font-family: $font-stack
             align-self: center
+            @media(max-width: $small-devices)
+              font-size: 2.2em
           input
             border: none
             border-bottom: 2px solid black
             margin-bottom: 10%
             background: transparent
+            @media(max-width: $small-devices)
+              margin-bottom: 15%
             &:focus
               border-color: $secondary
               &::placeholder
@@ -244,6 +253,9 @@ html
           .form-message
             border: 2px solid black
             margin-bottom: 10%
+            @media(max-width: $small-devices)
+              margin-bottom: 15%
+              padding-bottom: 10%
             &:focus
               border-color: $secondary
               &::placeholder
@@ -259,6 +271,9 @@ html
             position: relative
             z-index: 2
             overflow: hidden
+            @media(max-width: $small-devices)
+              width: 50%
+              height: 20%
             span
               position: absolute
               top: 50%

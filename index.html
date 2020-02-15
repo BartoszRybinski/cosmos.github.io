@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Cosmos</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -29,25 +30,27 @@
 
 <section class="about-section">
   <div class="about-container">
-    <div class="about-content">
+    <div class="about-content" data-aos="fade-up">
       <h1>About Us</h1>
       <p>My name is Bartosz Rybiński.  I`m a co-founder and frontend developer
         of Cosmos company.  Our main goal is to contribute to international space exploration initiatives</p>
     </div>
   </div>
-  <img src="img/eclipse.png" alt="" class="about-eclipse">
+  <img src="img/eclipse.png" alt="" class="about-eclipse" data-aos="fade-up">
 </section>
 
 <section class="gallery-section">
-<div class="gallery-img-container">
+<div class="gallery-img-container" data-aos="fade-up">
   <img src="img/img_1.png" alt="" class="gallery-img-1">
   <img src="img/start-icon.svg" alt="" class="gallery-film-icon">
 </div>
-<div class="gallery-img-container">
+<!-- <div class="gallery-img-container" data-aos="fade-up" data-aos-delay="200"> -->
+  <div class="gallery-img-container" data-aos="fade-up">
   <img src="img/img_2.png" alt="" class="gallery-img-1">
   <img src="img/start-icon.svg" alt="" class="gallery-film-icon">
 </div>
-<div class="gallery-img-container">
+<!-- <div class="gallery-img-container" data-aos="fade-up" data-aos-delay="400"> -->
+  <div class="gallery-img-container" data-aos="fade-up">
   <img src="img/img_3.png" alt="" class="gallery-img-1">
   <img src="img/start-icon.svg" alt="" class="gallery-film-icon">
 </div>
@@ -55,16 +58,16 @@
 </section>
 
 <section class="contact-section">
-  <div class="contact-quote-wrapper">
+  <div class="contact-quote-wrapper" >
     <div class="contact-quote">
-      <p>The universe doesn’t
+      <p data-aos="fade-up">The universe doesn’t
          give you what you ask for with your thoughts - it gives
          you what you demand with your actions.</p>
-         <span>- Dr. Steve Maraboli</span>
+         <span data-aos="fade-up">- Dr. Steve Maraboli</span>
     </div>
   </div>
   <div class="contact-form-wrapper">
-    <div class="contact-form-container">
+    <div class="contact-form-container" data-aos="fade-up">
       <h2>Contact Us</h2>
       <input type="text" placeholder="Your name" class="form-name" required>
       <input type="text" placeholder="Your e-mail" class="form-email" required>
@@ -76,6 +79,10 @@
     </div>
   </div>
 </section>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 <script src="js/main.js"></script>
 <script src="js/particle.js"></script>
 </body>
