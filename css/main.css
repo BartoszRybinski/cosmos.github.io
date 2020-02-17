@@ -743,18 +743,40 @@ html {
         @media (max-width: 1150px) {
           html body .gallery-section .video-container {
             height: 33.4%; } }
+        @media (max-width: 768px) {
+          html body .gallery-section .video-container {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            height: 75%; } }
         html body .gallery-section .video-container video {
           -o-object-fit: fill;
           object-fit: fill;
           width: 60%;
           height: 90%;
           margin: auto; }
+          @media (max-width: 768px) {
+            html body .gallery-section .video-container video {
+              width: 90%;
+              height: 80%; } }
         html body .gallery-section .video-container .video-content {
           width: 40%;
           height: 100%;
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex; }
+          @media (max-width: 992px) {
+            html body .gallery-section .video-container .video-content {
+              height: 50%; } }
+          @media (max-width: 768px) {
+            html body .gallery-section .video-container .video-content {
+              width: 70%;
+              margin: auto; } }
+          @media (max-width: 500px) {
+            html body .gallery-section .video-container .video-content {
+              margin-top: 5%;
+              width: 90%; } }
           html body .gallery-section .video-container .video-content .video-content-wrap {
             width: 80%;
             height: 70%;
@@ -771,6 +793,10 @@ html {
             justify-content: space-between;
             text-align: center;
             font-weight: 100; }
+            @media (max-width: 768px) {
+              html body .gallery-section .video-container .video-content .video-content-wrap {
+                -ms-flex-pack: distribute;
+                justify-content: space-around; } }
             html body .gallery-section .video-container .video-content .video-content-wrap h2 {
               font-weight: 100;
               font-size: 2em; }
@@ -786,6 +812,12 @@ html {
                 -webkit-transform: scale(0.7);
                 -ms-transform: scale(0.7);
                 transform: scale(0.7); }
+              @media (max-width: 768px) {
+                html body .gallery-section .video-container .video-content .video-content-wrap img {
+                  -webkit-transform: scale(0.4);
+                  -ms-transform: scale(0.4);
+                  transform: scale(0.4);
+                  margin-top: -15%; } }
       html body .gallery-section .video-img-container {
         width: 33.4%;
         height: 100%;
@@ -816,7 +848,7 @@ html {
         @media (max-width: 500px) {
           html body .gallery-section .video-img-container {
             height: 50vh; } }
-        html body .gallery-section .video-img-container .active {
+        html body .gallery-section .video-img-container .img-earth {
           scroll-snap-align: start; }
         html body .gallery-section .video-img-container img {
           width: 100%;

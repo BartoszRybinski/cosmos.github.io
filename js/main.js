@@ -3,9 +3,7 @@ const galleryContainer = document.querySelectorAll(".video-img-container");
 const widthOutput = window.innerWidth;
 const arrowBack = document.querySelector(".arrow-back");
 const videoContainer = document.querySelector(".video-container");
-const galleryImg1 = document.querySelector(".gallery-img-1");
-const galleryImg2 = document.querySelector(".gallery-img-2");
-const galleryImg3 = document.querySelector(".gallery-img-3");
+const imgEarth = document.querySelector(".img-earth");
 
 function hamburgerToggle(){
   document.querySelector('.hamburger-menu').classList.toggle("change");
@@ -25,7 +23,7 @@ if(widthOutput<=1150){
   });
 
 
-  galleryImg1.addEventListener("click", ()=>{
+  imgEarth.addEventListener("click", ()=>{
     videoContainer.style.opacity="1";
     videoContainer.style.visibility="visible";
   })

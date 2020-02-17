@@ -238,15 +238,29 @@ html
         visibility: hidden
         @media(max-width: $extra-large-devices)
           height: 33.4%
+        @media(max-width: $medium-devices)
+          flex-direction: column
+          height: 75%
         video
           object-fit: fill
           width: 60%
           height: 90%
           margin: auto
+          @media(max-width: $medium-devices)
+            width: 90%
+            height: 80%
         .video-content
           width: 40%
           height: 100%
           display: flex
+          @media(max-width: $large-devices)
+            height: 50%
+          @media(max-width: $medium-devices)
+            width: 70%
+            margin: auto
+          @media(max-width: $small-devices)
+            margin-top: 5%
+            width: 90%
           .video-content-wrap
             width: 80%
             height: 70%
@@ -256,6 +270,8 @@ html
             justify-content: space-between
             text-align: center
             font-weight: $font-thin
+            @media(max-width: $medium-devices)
+              justify-content: space-around
             h2
               font-weight: $font-thin
               font-size: 2em
@@ -265,6 +281,10 @@ html
               transition: 0.3s ease-in-out
               &:hover
                 transform: scale(0.7)
+              @media(max-width: $medium-devices)
+                transform: scale(0.4)
+                margin-top: -15%
+
 
       .video-img-container
         width: 33.4%
@@ -286,8 +306,8 @@ html
         @media(max-width: $medium-devices)
           height: 60vh
         @media(max-width: $small-devices)
-          height: 50vh  
-        .active
+          height: 50vh
+        .img-earth
           scroll-snap-align: start
 
         img
