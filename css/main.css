@@ -644,7 +644,7 @@ html {
       transform: translate(-50%, -50%); }
       @media (max-width: 500px) {
         html body .hero-moon {
-          width: 150%; } }
+          width: 50%; } }
     html body .about-section {
       width: 100vw;
       height: 100vh;
@@ -810,6 +810,12 @@ html {
             width: 90%;
             height: 100vh;
             margin: auto; } }
+        @media (max-width: 768px) {
+          html body .gallery-section .video-img-container {
+            height: 60vh; } }
+        @media (max-width: 500px) {
+          html body .gallery-section .video-img-container {
+            height: 50vh; } }
         html body .gallery-section .video-img-container .active {
           scroll-snap-align: start; }
         html body .gallery-section .video-img-container img {

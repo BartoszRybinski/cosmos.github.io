@@ -165,7 +165,7 @@ html
       left: 50%
       transform: translate(-50%, -50%)
       @media(max-width: $small-devices)
-        width: 150%
+        width: 50%
 
     .about-section
       width: 100vw
@@ -283,6 +283,10 @@ html
           width: 90%
           height: 100vh
           margin: auto
+        @media(max-width: $medium-devices)
+          height: 60vh
+        @media(max-width: $small-devices)
+          height: 50vh  
         .active
           scroll-snap-align: start
 
