@@ -1,0 +1,420 @@
+html
+  scroll-snap-type: y mandatory
+  scroll-behavior: smooth
+  @media(max-width: $extra-large-devices)
+    scroll-snap-type: none
+  body
+    overflow-x: hidden
+    overflow-y: auto
+    section
+      scroll-snap-align: start
+
+    .preloader
+      position: absolute
+      width: 100%
+      height: 100%
+      background-color: $black
+      top: 0
+      left: 0
+      z-index: 1002
+      animation: preloader 1s ease-in-out forwards
+      animation-delay: 4s
+      @keyframes preloader
+        to
+          opacity: 0
+          height: 0%
+      .preloader-solar
+        top: 40%
+        left: 50%
+        position: absolute
+        transform: translate(-50%, -50%)
+      .preloader-eclipse
+        position: absolute
+        transform: translate(-50%, -50%)
+        animation: solar-eclipse 3s ease-in-out forwards
+        @keyframes solar-eclipse
+          0%
+            top: 30%
+            left: 40%
+          100%
+            top: 40%
+            left: 50%
+      span
+        color: #fff
+        font-size: 1.2em
+        letter-spacing: 5px
+        font-weight: $font-light
+        top: 70%
+        left: 50%
+        position: absolute
+        transform: translate(-50%, -50%)
+        animation: solar-eclipse-span 2s ease-in-out infinite
+        @keyframes solar-eclipse-span
+          0%
+            opacity: 0.3
+          50%
+            opacity: 1
+          100%
+            opacity: 0.3
+
+
+    .sidebar
+      position: absolute
+      top: -5vh
+      left: -101vh
+      height: 110vh
+      width: 101vh
+      max-width: 200vw
+      background-color: $white
+      z-index: 1001
+      border-radius: 50%
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      padding-left: 50vh
+      transition: 1s ease
+      z-index: 1002
+      li
+        list-style-type: none
+        padding: 20px
+        a
+          color: #aaa
+          text-decoration: none
+          position: relative
+          font-size: 1.2em
+          &:hover
+            &:before
+              width: 100%
+          &:before
+            top: -2px
+            left: 0
+            width: 0
+            height: 100%
+            color: $black
+            position: absolute
+            overflow: hidden
+            content: attr(data-text)
+            transition: ease 0.3s
+    .change-sidebar
+      left: -47vh
+
+
+    header
+      top: 0
+      left: 0
+      width: 100vw
+      height: 20vh
+      position: absolute
+      z-index: 1001
+      nav
+        width: 90%
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin: 0 auto
+        .header-logo
+          width: 150px
+        .hamburger-menu
+          width: 35px
+          height: 25px
+          cursor: pointer
+
+          &:hover
+            .bar1
+              width: 100%
+              transform: translateY(-5px) translateX(0px)
+            .bar3
+              width: 100%
+          .bar
+            height: 4px
+            width: 100%
+            background-color: $white
+            display: block
+            border-radius: 5px
+            opacity: 1
+            transition: 0.3s ease-in-out
+          .bar1
+            transform: translateY(-5px) translateX(17px)
+            width: 50%
+          .bar3
+            transform: translateY(5px)
+            width: 50%
+        .change
+          .bar1
+            transform: rotate(-45deg)
+            opacity: 0
+          .bar2
+            width: 100%
+            transform: translateY(-2px) rotate(45deg)
+          .bar3
+            width: 100%
+            transform: translateY(-5px) rotate(-45deg)
+
+    .hero-section
+      width: 100vw
+      height: 100vh
+      overflow: hidden
+    .hero-moon
+      margin: 0
+      position: absolute
+      width: 30%
+      z-index: 1000
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      @media(max-width: $small-devices)
+        width: 50%
+
+    .about-section
+      width: 100vw
+      height: 100vh
+      display: flex
+      @media(max-width: $extra-large-devices)
+        width: 90vw
+        margin: auto
+      @media(max-width: $large-devices)
+        height: 60vh
+      .about-container
+        width: 50%
+        height: 80%
+        margin: auto
+        display: flex
+
+        @media(max-width: $large-devices)
+          width: 100%
+        .about-content
+          height: 100%
+          width: 80%
+          display: flex
+          flex-direction: column
+          margin: auto
+          align-items: center
+          font-weight: $font-thin
+          justify-content: center
+
+          h1
+            font-size: 3em
+            font-weight: $font-thin
+            position: relative
+            &:after
+              content: ''
+              width: 100%
+              height: 2px
+              background-color: $secondary
+              top: 100%
+              left: 0
+              position: absolute
+          p
+            font-size: 1.2em
+            text-align: center
+      img
+        height: 80%
+        width: 50%
+        margin: auto
+        @media(max-width: $large-devices)
+          visibility: hidden
+          width: 0%
+
+    .gallery-section
+      width: 100vw
+      height: 100vh
+      display: flex
+      position: relative
+      @media(max-width: $extra-large-devices)
+        flex-direction: column
+        height: max-content
+      .video-container
+        width: 100%
+        height: 100%
+        background-color: $white
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 1005
+        display: flex
+        transition: 0.5s ease-in-out
+        visibility: hidden
+        @media(max-width: $extra-large-devices)
+          height: 33.4%
+        video
+          object-fit: fill
+          width: 60%
+          height: 90%
+          margin: auto
+        .video-content
+          width: 40%
+          height: 100%
+          display: flex
+          .video-content-wrap
+            width: 80%
+            height: 70%
+            display: flex
+            flex-direction: column
+            margin: auto
+            justify-content: space-between
+            text-align: center
+            font-weight: $font-thin
+            h2
+              font-weight: $font-thin
+              font-size: 2em
+            img
+              transform: scale(0.6)
+              cursor: pointer
+              transition: 0.3s ease-in-out
+              &:hover
+                transform: scale(0.7)
+
+      .video-img-container
+        width: 33.4%
+        height: 100%
+        cursor: pointer
+        position: relative
+        filter: grayscale(100%)
+        display: flex
+        &:hover
+          filter: grayscale(0%)
+          transition: 0.8s ease-in-out
+          .video-icon
+            opacity: 1
+            width: 13%
+        @media(max-width: $extra-large-devices)
+          width: 90%
+          height: 100vh
+          margin: auto
+        .active
+          scroll-snap-align: start
+
+        img
+          width: 100%
+          height: 100%
+          margin: auto
+        .video-icon
+          width: 13%
+          height: max-content
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          opacity: .7
+          transition: 0.3s ease-in-out
+          @media(max-width: $extra-large-devices)
+            width: 11%
+
+    .contact-section
+      width: 100vw
+      height: 100vh
+      display: flex
+      @media(max-width: $extra-large-devices)
+        width: 90vw
+        margin: auto
+      @media(max-width: $large-devices)
+        flex-direction: column
+        height: 70vh
+        align-items: center
+      @media(max-width: $small-devices)
+        height: 60vh
+      .contact-quote-wrapper
+        width: 50%
+        height: 80%
+        margin: auto
+        background: url("../img/stars.jpeg")
+        background-position: center
+        background-size: cover
+        background-repeat: no-repeat
+        filter: grayscale(100%)
+        @media(max-width: $large-devices)
+          visibility: hidden
+          height: 0
+      .contact-quote
+        color: $white
+        width: 70%
+        text-align: center
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        font-size: 1.4em
+        span
+          font-size: 0.8em
+
+      .contact-form-wrapper
+        width: 50%
+        display: flex
+        @media(max-width: $large-devices)
+          width: 70%
+        @media(max-width: $small-devices)
+          width: 90%
+        .contact-form-container
+          width: 70%
+          height: 80%
+          display: flex
+          flex-direction: column
+          margin: auto
+          h2
+            font-size: 2em
+            font-family: $font-stack
+            align-self: center
+            @media(max-width: $small-devices)
+              font-size: 2.2em
+          input
+            border: none
+            border-bottom: 2px solid black
+            margin-bottom: 10%
+            background: transparent
+            @media(max-width: $small-devices)
+              margin-bottom: 15%
+            &:focus
+              border-color: $secondary
+              &::placeholder
+                color: $secondary
+          .form-message
+            border: 2px solid black
+            margin-bottom: 10%
+            @media(max-width: $small-devices)
+              margin-bottom: 15%
+              padding-bottom: 10%
+            &:focus
+              border-color: $secondary
+              &::placeholder
+                color: $secondary
+          .btn-submit
+            background-color: black
+            color: white
+            padding: 2%
+            width: 40%
+            height: 15%
+            align-self: center
+            cursor: pointer
+            position: relative
+            z-index: 2
+            overflow: hidden
+            @media(max-width: $small-devices)
+              width: 50%
+              height: 20%
+            span
+              position: absolute
+              top: 50%
+              left: 50%
+              transform: translate(-50%, -50%)
+            &:before
+              content: ''
+              top: 100%
+              left: -150%
+              height: 500%
+              width: 200%
+              background-color: $secondary
+              position: absolute
+              transform: rotate(45deg)
+              z-index: -2
+            &:hover
+              &:before
+                animation: btn-anim 0.7s forwards
+                @keyframes btn-anim
+                  50%
+                    top: -300%
+                    left: 12%
+                  100%
+                    top: -200%
+                    left: -30%
