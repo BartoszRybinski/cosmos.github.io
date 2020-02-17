@@ -5,7 +5,7 @@
 var canvasDiv = document.querySelector(".hero-section");
 var options = {
   particleColor: '#888',
-  background: 'img/moon.jpg',
+  background: '#000',
   interactive: true,
   speed: 'medium',
   density: 'medium'
