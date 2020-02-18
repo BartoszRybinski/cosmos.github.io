@@ -750,6 +750,9 @@ html {
             -ms-flex-direction: column;
             flex-direction: column;
             height: 66.7%; } }
+        @media (max-height: 550px) {
+          html body .gallery-section .video-container {
+            height: 100%; } }
         html body .gallery-section .video-container video {
           -o-object-fit: fill;
           object-fit: fill;
