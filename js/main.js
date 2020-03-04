@@ -1,9 +1,8 @@
 const hamburger = document.querySelector('.hamburger-menu');
 const galleryContainer = document.querySelectorAll(".video-img-container");
 const widthOutput = window.innerWidth;
-const arrowBack = document.querySelector(".arrow-back");
 const videoContainer = document.querySelector(".video-container");
-const imgEarth = document.querySelector(".img-earth");
+
 
 function hamburgerToggle(){
   document.querySelector('.hamburger-menu').classList.toggle("change");
@@ -17,13 +16,12 @@ if(widthOutput<=1150){
   galleryContainer[2].removeAttribute("data-aos-delay");
 }
 
-  arrowBack.addEventListener("click", ()=>{
-    videoContainer.style.opacity="0";
-    videoContainer.style.visibility="hidden";
-  });
-
-
-  imgEarth.addEventListener("click", ()=>{
-    videoContainer.style.opacity="1";
-    videoContainer.style.visibility="visible";
+  galleryContainer[0].addEventListener("click", ()=>{
+    location.href = "earth.html";
+  })
+  galleryContainer[1].addEventListener("click", ()=>{
+    location.href = "earth2.html";
+  })
+  galleryContainer[2].addEventListener("click", ()=>{
+    location.href = "earth3.html";
   })
